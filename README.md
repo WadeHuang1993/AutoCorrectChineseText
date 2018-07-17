@@ -26,6 +26,7 @@
 cd path/to/AutoCorrectChineseText
 php php AutoCorrect.php InputFile OutputFile
 ```
-註：若 OutputFile 沒定義的話，預設輸出的檔案名稱會與輸入檔案名稱相同。
+
+若 OutputFile 沒定義的話，預設輸出的檔案名稱會與輸入檔案名稱相同。
 
 注意：此版本目前只有測試過 txt 檔案可正常排版。
