@@ -15,7 +15,8 @@
 ## 使用方式：
 注意：AutoCorrectChineseText 必須是在 PHP-CLI 模式下進行：
 
-   將要進行排版的檔案放到 AutoCorrectChineseText 目錄下，在用 PHP-CLI執行 AutoCorrect.php，即可進行排版，並且將排版完成的檔案放置在 Outputs 目錄內。
+   將要進行排版的檔案放到 AutoCorrectChineseText 目錄下，
+   再使 PHP-CLI 執行 AutoCorrect.php 進行排版，AutoCorrectChineseText 會自動將排版完成的檔案輸出至 Outputs 目錄內。
 
 ### 步驟：
   * 把要進行排版的檔案放到 AutoCorrectChineseText 目錄下。
