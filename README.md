@@ -7,6 +7,8 @@
 
 此工具是基於 [NauxLiu/auto-correct](https://github.com/NauxLiu/auto-correct) 做出來的「自動中文排版工具」。
 
+![demo.png](./demo.png)
+
 ## 安裝：
 將 AutoCorrectChineseText Clone 下來即可。
 

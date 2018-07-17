@@ -1,0 +1,30 @@
+# 什麼是 JSP (JavaServer Pages)?
+JavaServer Pages (JSP) 是一項開發動態網頁的技術，讓開發者可以透過特殊的 JSP 標籤在 HTML 頁面裡插入 Java 程式碼，JSP 標籤通常是 <% 當作開頭， %> 當作結尾。
+JSP 是為了實現 Java 網路應用程式 UI 而設計的一種 Java servlet。JSP 本身為一個文字檔，裡面可能包含了 HTML 或 XTML 語言、xml 物件以及 JSP 的語法。
+使用 JSP 時，你可以透過網頁表單 (forms ) 蒐集使用者輸入的東西 (inputs )，呈現來自資料庫或其他來源的資料，並創造出動態網頁。
+JSP 標籤可以用來做很多種用途，例如從資料庫取得資訊、使用 JavaBeans 元件以及在網頁間傳遞或共享資訊。
+
+# 為什麼要使用 JSP ?
+JSP 目的是提供基於共通閘道介面 CGI 上的程式開發，但 CGI 相較之下，JSP 還提供了幾項優點：
+JSP 允許直接使用 HTML 物件，而不須再載入任何 CGI 檔案。
+JSP 在運作前就已經完成編譯動作，不像 CGI 還需要伺服器在開啟網頁時還需要載入編譯器。
+JSP 是建立於 Java Servlets API 之上，所以就像 Servlets 一樣，JSP 一樣可以使用所有 JAVA 平台企業版 的 APIs，包括了 JDBC、JNDI、EJB、JAXP 等。
+JSP 頁面可以組合 servlets 來處理商業邏輯以及使用 Java servlet 的模板引擎提供的 model。
+JSP 為 Java EE 不能分離的一部分，這意味著 JSP 在應用程式間扮演相當重要的一員。
+
+#JSP 的優點:
+接下來將列出 JSP 與其他網頁技術比較的優點:
+
+vs. ASP (Active Server Pages ): JSP 的優點有兩項:第一，JSP 是使用 JAVA 語言撰寫的，而不是 VB 或其他微軟的程式語言，所以使用上會更有力更簡單；第二，JSP 可以在其他作業系統上運行，不像 ASP 只能在微軟的伺服器運行。
+vs. Pure Servlets: 相較於 Pure Servlets 需要使用大量的 println 語法來產生 HTML 物件，JSP 更容易撰寫與修改正規的 HTML 語法。
+vs. SSI (Server-Side Includes ): SSI 唯一的用途就是簡單的鑲入檔案，並不是可以使用表單資料 (form data ) 或與資料庫做連結的程式語言。
+vs. JavaScript: JavaScrupt 雖然可以在客戶端 (Client ) 動態產生 HTML，但幾乎不像網頁伺服器一樣能達成複雜的任務，例如：資料庫存取與圖片處理等。
+vs. 靜態 HTML: 標準的 HTML 完全沒辦法產生動態的資訊。
+
+# 接下來呢?
+我將帶著你一步一步設定要啟動 JSP 的環境。為了能繼續學習 JSP ，建議你要有些撰寫 Java 程式語言的能力。如果你不了解 Java 程式語言，那麼我建議你先前往 Java 教學了解一下 Java 程式。
+
+筆者說:
+由於這個章節是 JSP 概論，當然提到了很多 JSP 牽扯到的技術跟專業用詞，但不用緊張，先大概了解一下就可以了，可以繼續進行學習，等往後知識足了再回頭研究也無妨。
+
+原文網址:https://www.tutorialspoint.com//jsp/jsp_overview.htm
