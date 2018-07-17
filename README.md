@@ -24,7 +24,7 @@
 
 ```
 cd path/to/AutoCorrectChineseText
-php php AutoCorrect.php InputFile OutputFile
+php AutoCorrect.php InputFile OutputFile
 ```
 
 若 OutputFile 沒定義的話，預設輸出的檔案名稱會與輸入檔案名稱相同。
