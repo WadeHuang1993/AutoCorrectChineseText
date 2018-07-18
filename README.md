@@ -1,6 +1,10 @@
 # AutoCorrectChineseTypesetting
 # 自動中文排版工具
 
+[![](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=my-website
+)](https://wadehuanglearning.blogspot.com/)
+![](https://img.shields.io/badge/PHP-%3E%3D%205.6-blue.svg)
+
 此工具用於統一中文文案、排版，降低團隊成員之間的溝通成本，增強網站氣質。
 
 其統一中文文案與排版格式皆參考[中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines)。
