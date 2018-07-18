@@ -11,12 +11,20 @@ class ComposerStaticInit990b92317e9af51da22ad4706e4e6582
         array (
             'Naux\\' => 5,
         ),
+        'G' => 
+        array (
+            'GetOptionKit\\' => 13,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Naux\\' => 
         array (
             0 => __DIR__ . '/..' . '/naux/auto-correct',
+        ),
+        'GetOptionKit\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/corneltek/getoptionkit/src',
         ),
     );
 

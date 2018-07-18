@@ -13,25 +13,33 @@
 
 ![demo.png](./demo.png)
 
+## 安裝要求：
+  * PHP 5.6+
+
 ## 安裝：
 將 AutoCorrectChineseText Clone 下來即可。
 
-## 使用方式：
-注意：AutoCorrectChineseText 必須是在 PHP-CLI 模式下進行：
+## 使用說明：
+AutoCorrectChineseText 必須在 PHP-CLI 模式下進行：
 
-   將要進行排版的檔案放到 AutoCorrectChineseText 目錄下，
-   再使 PHP-CLI 執行 AutoCorrect.php 進行排版，AutoCorrectChineseText 會自動將排版完成的檔案輸出至 Outputs 目錄內。
+   * 將要進行排版的檔案放到 AutoCorrectChineseText 目錄下。
+   * 使用 PHP-CLI 執行 AutoCorrect.php 校正中文文案排版。
+   * AutoCorrect.php 會自動將校正完成的檔案輸出至 Outputs 目錄內。
 
 ### 步驟：
-  * 把要進行排版的檔案放到 AutoCorrectChineseText 目錄下。
-  * cd 到 AutoCorrectChineseText 下。
-  * 執行 AutoCorrect.php。
-
+在 Command-Line 模式中：
 ```
 cd path/to/AutoCorrectChineseText
-php AutoCorrect.php InputFile OutputFile
+php AutoCorrect.php -i InputFile -o OutputFile
 ```
-
 若 OutputFile 沒定義的話，預設輸出的檔案名稱會與輸入檔案名稱相同。
 
-注意：此版本目前只有測試過 txt 檔案可正常排版。
+### 可用參數：
+```
+-i  要做排版的檔案名稱。
+-o  輸出的檔案名稱（可選）
+-h  查看使用說明。
+```
+
+## 注意：
+此版本目前只有測試過 txt 檔案可正常排版。

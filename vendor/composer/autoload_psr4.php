@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Naux\\' => array($vendorDir . '/naux/auto-correct'),
+    'GetOptionKit\\' => array($vendorDir . '/corneltek/getoptionkit/src'),
 );

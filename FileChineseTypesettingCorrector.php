@@ -10,14 +10,14 @@ class FileChineseTypesettingCorrector
     /**
      * 第一個參數: 輸入的檔案名稱
      */
-    protected $fileName;
+    protected $inputFileName = '';
 
     /**
      * 第二個參數: 輸出的檔案名稱
      *
      * 預設值: 輸入的檔案名稱.
      */
-    protected $outputFileName;
+    protected $outputFileName = '';
 
     /**
      * 輸入檔案的全路徑
@@ -36,11 +36,9 @@ class FileChineseTypesettingCorrector
 
     protected $length = 1024 * 1024;
 
-    public function __construct($corrector, array $argv)
+    public function __construct($corrector)
     {
-        $this->fileName       = $argv[1];
-        $this->outputFileName = isset($argv[2]) ? $argv[2] : $argv[1];
-        $this->corrector      = $corrector;
+        $this->corrector = $corrector;
     }
 
     public function addDictionary(array $dictionary)
@@ -53,11 +51,29 @@ class FileChineseTypesettingCorrector
         $this->basePath = $basePath;
     }
 
+    public function setInput($input)
+    {
+        $this->inputFileName = $input;
+    }
+
+    public function setOutput($output)
+    {
+        $this->outputFileName = $output;
+    }
+
+    protected function outputFileName()
+    {
+        return (trim($this->outputFileName) != '') ? $this->outputFileName : $this->inputFileName;
+    }
+
     public function correct()
     {
+        if ('' === trim($this->inputFileName)) {
+            throw new Exception('錯誤，尚未設定 inputFileName ，找不到輸入檔案。');
+        }
 
-        $this->inputFilePath  = $this->basePath . '/' . $this->fileName;
-        $this->outputFilePath = $this->basePath . '/outputs/' . $this->outputFileName;
+        $this->inputFilePath  = $this->basePath . '/' . $this->inputFileName;
+        $this->outputFilePath = $this->basePath . '/outputs/' . $this->outputFileName();
 
         $outputFile = fopen($this->outputFilePath, "w");
 
