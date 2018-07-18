@@ -79,6 +79,6 @@ php AutoCorrect.php -i InputFile -a dictionary/AAA.php -a dictionary/BBB.php
   * [MIT](https://opensource.org/licenses/MIT)
 
 ## TODO：
-  * 加入新增辭典功能。
+  * 加入 AutoCorrectChineseTypesetting 單元測試。
 
 
