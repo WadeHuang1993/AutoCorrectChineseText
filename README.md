@@ -1,10 +1,9 @@
 # AutoCorrectChineseTypesetting
 # 自動校正中文文案排版（For 檔案）
 
-[![](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=my-website
-)](https://wadehuanglearning.blogspot.com/)
+[![](https://img.shields.io/badge/my--website-here-green.svg)](https://wadehuanglearning.blogspot.com/)
 ![](https://img.shields.io/badge/PHP-%3E%3D%205.6-blue.svg)
-[![](https://img.shields.io/npm/l/express.svg)](https://opensource.org/licenses/MIT)
+[![](https://img.shields.io/badge/licenses-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ![](https://img.shields.io/github/last-commit/WadeHuang1993/AutoCorrectChineseTypesetting.svg)
 ![](https://img.shields.io/badge/coverage-100%25-green.svg)
 
@@ -84,8 +83,5 @@ php AutoCorrect.php -i InputFile -a dictionary/AAA.php -a dictionary/BBB.php
 
 ## License
   * [MIT](https://opensource.org/licenses/MIT)
-
-## TODO：
-  * 加入 AutoCorrectChineseTypesetting 單元測試。
 
 
