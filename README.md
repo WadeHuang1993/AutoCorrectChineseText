@@ -17,19 +17,19 @@
   * PHP 5.6+
 
 ## 安裝：
-將 AutoCorrectChineseText Clone 下來即可。
+將 AutoCorrectChineseTypesetting Clone 下來即可。
 
 ## 使用說明：
-AutoCorrectChineseText 必須在 PHP-CLI 模式下進行：
+AutoCorrectChineseTypesetting 必須在 PHP-CLI 模式下進行：
 
-   * 將要進行排版的檔案放到 AutoCorrectChineseText 目錄下。
+   * 將要進行排版的檔案放到 AutoCorrectChineseTypesetting 目錄下。
    * 使用 PHP-CLI 執行 AutoCorrect.php 校正中文文案排版。
    * AutoCorrect.php 會自動將校正完成的檔案輸出至 Outputs 目錄內。
 
 ### 步驟：
 在 Command-Line 模式中：
 ```
-cd path/to/AutoCorrectChineseText
+cd path/to/AutoCorrectChineseTypesetting
 php AutoCorrect.php -i InputFile -o OutputFile
 ```
 若 OutputFile 沒定義的話，預設輸出的檔案名稱會與輸入檔案名稱相同。
@@ -43,3 +43,6 @@ php AutoCorrect.php -i InputFile -o OutputFile
 
 ## 注意：
 此版本目前只有測試過 txt 檔案可正常排版。
+
+## TODO：
+  * 加入新增辭典功能。
