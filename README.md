@@ -4,7 +4,7 @@
 [![](https://img.shields.io/website-up-down-green-red/http/shields.io.svg?label=my-website
 )](https://wadehuanglearning.blogspot.com/)
 ![](https://img.shields.io/badge/PHP-%3E%3D%205.6-blue.svg)
-
+[![](https://img.shields.io/npm/l/express.svg)](https://opensource.org/licenses/MIT)
 此工具用於統一中文文案、排版，降低團隊成員之間的溝通成本，增強網站氣質。
 
 其統一中文文案與排版格式皆參考[中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines)。
@@ -37,12 +37,48 @@ php AutoCorrect.php -i InputFile -o OutputFile
 ### 可用參數：
 ```
 -i  要做排版的檔案名稱。
--o  輸出的檔案名稱（可選）
+-o  輸出的檔案名稱（可選）。
+-a  新增校正辭彙庫（可選，可多次新增）。
 -h  查看使用說明。
 ```
+
+### 新增辭彙庫
+
+`-a` 參數提供了新增辭彙庫的功能：
+
+ * 將您要新增的辭彙庫（xxx.php）放置於 dictionary 目錄下。
+ * 執行 AutoCorrect.php 並使用 `-a` 參數加載辭彙庫。
+ * 可多次使用 -a 參數，加載多個辭彙庫。
+
+辭彙庫必須為 `*.php` 檔案，其內容為：
+```php
+<?php
+return [
+   # '校正前的字詞' => '校正後的字詞',
+   /**
+    * ...將您的新詞彙加入於此。
+    */
+   'docker' => 'Docker',
+   'deploy' => 'Deploy',
+   'zf1' => 'ZendFramework 1',
+   'zf2' => 'ZendFramework 2',
+];
+```
+
+#### 範例：使用 -a 參數，加載多個辭彙庫。
+ ```
+cd path/to/AutoCorrectChineseTypesetting
+php AutoCorrect.php -i InputFile -a dictionary/AAA.php -a dictionary/BBB.php
+ ```
+![addDicts.png](./addDicts.png)
 
 ## 注意：
 此版本目前只有測試過 txt 檔案可正常排版。
 
+## License
+  * [MIT](https://opensource.org/licenses/MIT)
+
 ## TODO：
   * 加入新增辭典功能。
+
+

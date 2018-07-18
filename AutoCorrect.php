@@ -18,10 +18,10 @@ $parser  = new OptionParser($specs);
 $specs->add('i:', '要做排版的檔案名稱 EX: -i sample.txt');
 $specs->add('o:', '輸出的檔案名稱(可選） EX: -o sampleOutput.txt');
 $specs->add('a+', '新增辭典（可選，可多次新增）' . ' EX: -a HTML -a Python');
-$specs->add('h',  '查看使用說明');
-$option = $parser->parse($argv);
+$specs->add('h', '查看使用說明');
+$cli = $parser->parse($argv);
 
-if ($option->has('h')) {
+if ($cli->has('h')) {
     introduce($printer, $specs);
 }
 
@@ -32,15 +32,28 @@ $corrector     = new AutoCorrect;
 $fileCorrector = new FileChineseTypesettingCorrector($corrector);
 $fileCorrector->setBasePath(__DIR__);
 
-if ($option->has('i')) {
-    $fileCorrector->setInput($option->get('i'));
+if ($cli->has('i')) {
+    $fileCorrector->setInput($cli->get('i'));
 } else {
     echo '請使用 -i 參數加入要做排版的文件。或 -h 查看使用說明。';
     exit;
 }
 
-if ($option->has('o')) {
-    $fileCorrector->setOutput($option->get('o'));
+if ($cli->has('o')) {
+    $fileCorrector->setOutput($cli->get('o'));
+}
+
+// 如果有新增辭典，則加入將辭典內容加入校正範圍
+if ($cli->has('a')) {
+
+    $dictionaries = $cli->get('a');
+
+    foreach ($dictionaries as $dictionaryPath) {
+
+        $dictionary = include __DIR__ . '/' . $dictionaryPath;
+
+        $fileCorrector->addDictionary($dictionary);
+    }
 }
 
 /*******************************
