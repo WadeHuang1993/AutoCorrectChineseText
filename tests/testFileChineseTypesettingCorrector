@@ -1,0 +1,106 @@
+<?php
+
+require_once __DIR__ . '/../FileChineseTypesettingCorrector.php';
+
+use Mockery as Mock;
+use Naux\AutoCorrect;
+
+class testFileChineseTypesettingCorrector extends PHPUnit\Framework\TestCase
+{
+    protected $inputFile = '';
+
+    protected $outputPath = __DIR__ . '/outputs';
+
+    protected $corrector;
+
+    public function setUp()
+    {
+        parent::setUp();
+        $this->corrector = $this->mockCorrector();
+    }
+
+    public function tearDown()
+    {
+        parent::tearDown();
+
+        if (file_exists($this->outputPath . '/test.txt')) {
+            unlink($this->outputPath . '/test.txt');
+        }
+        if (file_exists($this->outputPath . '/testOutput.txt')) {
+            unlink($this->outputPath . '/testOutput.txt');
+        }
+    }
+
+    public function testCorrectWithoutOutput()
+    {
+        // Arrange
+        $fileCorrector = new FileChineseTypesettingCorrector($this->corrector);
+        $fileCorrector->setBasePath(__DIR__);
+        $fileCorrector->setInput('test.txt');
+
+        // Act
+        $fileCorrector->correct();
+
+        // Assert
+        $this->assertTrue(file_exists($this->outputPath . '/test.txt'));
+    }
+
+    public function testCorrectWithOutput()
+    {
+        // Arrange
+        $fileCorrector = new FileChineseTypesettingCorrector($this->corrector);
+        $fileCorrector->setBasePath(__DIR__);
+        $fileCorrector->setInput('test.txt');
+        $fileCorrector->setOutput('testOutput.txt');
+
+        // Act
+        $fileCorrector->correct();
+
+        // Assert
+        $this->assertTrue(file_exists($this->outputPath . '/testOutput.txt'));
+    }
+
+    public function testCorrectWithAddDictionary()
+    {
+        // Arrange
+        $this->corrector->shouldReceive('withDict')
+            ->with([
+                'zf1' => 'ZendFramework 1',
+            ]);
+
+        $fileCorrector = new FileChineseTypesettingCorrector($this->corrector);
+
+        $fileCorrector->setBasePath(__DIR__);
+        $fileCorrector->setInput('test.txt');
+        $fileCorrector->addDictionary([
+            'zf1' => 'ZendFramework 1',
+        ]);
+
+        // Act
+        $fileCorrector->correct();
+
+        // Assert
+        $this->assertTrue(file_exists($this->outputPath . '/test.txt'));
+    }
+
+    public function testCorrectWithoutSettingInputFile()
+    {
+
+        // Arrange
+        $fileCorrector = new FileChineseTypesettingCorrector($this->corrector);
+        $fileCorrector->setBasePath(__DIR__);
+
+        // Act
+        // Assert
+        $this->expectExceptionMessage('錯誤，尚未設定 inputFileName ，找不到輸入檔案。');
+        $fileCorrector->correct();
+    }
+
+    protected function mockCorrector()
+    {
+        $corrector = Mock::mock(AutoCorrect::class);
+        $corrector->shouldReceive('convert');
+
+        return $corrector;
+    }
+}
