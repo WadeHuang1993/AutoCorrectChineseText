@@ -1,4 +1,4 @@
-# AutoCorrectChineseText
+# AutoCorrectChineseTypesetting
 # 自動中文排版工具
 
 此工具用於統一中文文案、排版，降低團隊成員之間的溝通成本，增強網站氣質。
