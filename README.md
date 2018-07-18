@@ -13,6 +13,12 @@
 
 ![demo.png](./demo.png)
 
+** 此工具只在 Command-Line 模式中運行 **
+
+![cli-only.png](./cli-only.png)
+
+
+
 ## 安裝要求：
   * PHP 5.6+
 
