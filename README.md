@@ -5,6 +5,7 @@
 )](https://wadehuanglearning.blogspot.com/)
 ![](https://img.shields.io/badge/PHP-%3E%3D%205.6-blue.svg)
 [![](https://img.shields.io/npm/l/express.svg)](https://opensource.org/licenses/MIT)
+![](https://img.shields.io/github/last-commit/WadeHuang1993/AutoCorrectChineseTypesetting.svg)
 
 此工具針對「檔案」校正中文文案的排版，統一中文文案與排版格式皆參考[中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines)。
 
