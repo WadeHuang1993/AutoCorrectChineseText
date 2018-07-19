@@ -23,7 +23,13 @@
   * PHP 5.6+
 
 ## 安裝：
-將 AutoCorrectChineseTypesetting Clone 下來即可。
+
+透過 Composer：
+```
+$ composer require wadehuang1993/auto-correct-chinese-typesetting --prefer-stable dev-master
+```
+
+或將 AutoCorrectChineseTypesetting Clone 下來即可。
 
 ## 使用說明：
 AutoCorrectChineseTypesetting 必須在 PHP-CLI 模式下進行：
