@@ -1,5 +1,5 @@
 {
-    "name": "wadehuang1993/AutoCorrectChineseTypesetting",
+    "name": "wadehuang1993/auto-correct-chinese-typesetting",
     "description": "a tool for auto-correct chinese typesetting.",
     "require": {
         "php": "^5.6",
