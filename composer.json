@@ -1,5 +1,8 @@
 {
+    "name": "WadeHuang1993/AutoCorrectChineseTypesetting",
+    "description": "A tool for auto-correct Chinese Typesetting.",
     "require": {
+        "php": "^5.6",
         "naux/auto-correct": "^1.0",
         "corneltek/getoptionkit": "^2.6"
     },
